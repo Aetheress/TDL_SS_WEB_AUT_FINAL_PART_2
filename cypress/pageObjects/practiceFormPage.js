@@ -1,6 +1,6 @@
 class PracticeFormPage {
     static visit() {
-        return cy.visit("https://demoqa.com/automation-practice-form");
+        cy.visit("https://demoqa.com/automation-practice-form");
     }
     static get firstName() {
         return cy.get(`#firstName`);

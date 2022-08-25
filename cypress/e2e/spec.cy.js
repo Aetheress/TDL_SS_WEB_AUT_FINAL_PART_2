@@ -1,5 +1,6 @@
 import PracticeFormPage from "../pageObjects/practiceFormPage";
 import FormDetailsConfirmationPage from "../pageObjects/formDetailsConfirmationPage";
+import SortablePage from "../pageObjects/sortablePage";
 
 describe('Part 2', () => {
   it('Practice forms', () => {
@@ -52,4 +53,10 @@ describe('Part 2', () => {
       `${state} ${city}`
     );
   })
+  it("Interactions - Sortable", () => {
+    SortablePage.visit();
+    SortablePage.rows.should("contain.text", "OneTwoThreeFourFiveSix");
+    SortablePage.sortRows(6);
+    SortablePage.rows.should("contain.text", "SixFiveFourThreeTwoOne");
+  });
 })
